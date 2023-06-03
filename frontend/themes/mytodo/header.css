@@ -1,0 +1,50 @@
+
+h1 {
+    margin: 0;
+}
+
+.header-class{
+    border-bottom: 2px solid black;
+    width: 100%;
+    min-height: 15vh;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.title-container {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+.button{
+    background-color: transparent;
+}.button:hover{
+    cursor: pointer;
+ }
+
+.title {
+    background-color: #F9F6F8;
+    color: #DF1C83;
+    font-size:3.5em;
+    text-decoration: underline;
+    width: 27%;
+}
+
+.label-user {
+    font-size: 1em;
+    font-weight: bold;
+    color: darkblue;
+    margin-right: 3%;
+}

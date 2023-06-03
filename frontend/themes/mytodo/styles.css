@@ -1,0 +1,160 @@
+
+@import 'header.css';
+
+
+.links {
+    color: #DF1C83;
+    background-color: #F9F6F8;
+    margin: 15%;
+    font-size: 1.25em;
+    border-radius: 5%;
+}
+
+h2 {
+    margin: auto;
+    color: #043976;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+vaadin-form-layout label{
+    font-size: 0.875em;
+    font-weight: bold;
+    color: #DF1C83 ;
+}
+
+
+    /*Vista Catalogo*/
+
+.campos-pelicula {
+    display:flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: auto;
+}
+
+span {
+    width: 100%;
+}
+
+.label-title {
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32.55%, 1fr));
+    margin-top: 3%;
+}
+
+.portada {
+    width: 50%;
+    margin: auto;
+}
+
+/*Form*/
+
+.body-login{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form-signin{
+    margin-top: 15%;
+    width: 50%;
+    border: 2px solid #DF1C83;
+    border-radius:1.313em 2.625em;
+    padding: 2.25em;
+}
+
+.signin-button {
+    background-color: blue;
+    color: white;
+    margin: 0.625em;
+    font-size: 1em;
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-button{
+    background-color: #F9F6F8;
+    color: #DF1C83;
+    margin: 0.625em;
+    font-size: 1em;
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons-form-container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container-form-login {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+}
+
+
+
+/*Vista Ficha de pelicula*/
+
+.body-ficha-pelicula{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-portada{
+    display: flex;
+    padding: 0;
+    margin-left: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-ficha-pelicula{
+    padding: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 10%;
+    padding: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.ver-ficha {
+    width: 100%;
+    color: #DF1C83;
+    font-style: italic;
+}
+
+/*Menu busqueda*/
+
+.menu-busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
