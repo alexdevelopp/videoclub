@@ -98,7 +98,7 @@ public class FichaPeliculaView extends HorizontalLayout implements HasUrlParamet
     private Div showCollection(String titulo, Pelicula pelicula) {
         Div div = new Div();
         if (titulo.equalsIgnoreCase("directores: ")) {
-            div.addClassName("campos-pelicula");
+            div.addClassName("ficha-pelicula");
             Span labelTitle = new Span(titulo);
             labelTitle.getStyle().set("font-weight", "bold").set("width", "100%");
             div.add(labelTitle);
@@ -108,7 +108,7 @@ public class FichaPeliculaView extends HorizontalLayout implements HasUrlParamet
                 div.add(title);
             }
         } else {
-            div.addClassName("campos-pelicula");
+            div.addClassName("ficha-pelicula");
             Span labelTitle = new Span(titulo);
             labelTitle.getStyle().set("font-weight", "bold").set("width", "100%");
             div.add(labelTitle);

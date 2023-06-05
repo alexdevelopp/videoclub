@@ -5,6 +5,7 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
@@ -17,6 +18,7 @@ import jakarta.annotation.security.RolesAllowed;
 import org.ieschabas.videoclub.backend.entities.Alquiler;
 import org.ieschabas.videoclub.backend.entities.Pelicula;
 import org.ieschabas.videoclub.backend.entities.Usuario;
+import org.ieschabas.videoclub.backend.enums.Categoria;
 import org.ieschabas.videoclub.backend.security.SecurityService;
 import org.ieschabas.videoclub.backend.service.AlquilerService;
 import org.ieschabas.videoclub.backend.service.PeliculaService;
@@ -26,8 +28,8 @@ import org.ieschabas.videoclub.frontend.styles.Header;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
 
 @Route("catalogo")
 @PageTitle("Catalogo de peliculas")
@@ -37,6 +39,8 @@ public class CatalogoView extends VerticalLayout {
     private SecurityService securityService;
     private H2 title;
 
+    private HorizontalLayout containerTitleCategory;
+    private HorizontalLayout container;
     private Usuario usuario;
 
     private PeliculaService peliculaService;
@@ -55,6 +59,10 @@ public class CatalogoView extends VerticalLayout {
 
     private RouterLink fichaPeliculaLink;
 
+    private Categoria [] categorias = {Categoria.ACCION,Categoria.DRAMA,Categoria.FANTASIA,Categoria.BELICO,Categoria.COMEDIA,Categoria.DOCUMENTAL,Categoria.MUSICAL,Categoria.SUSPENSE,Categoria.TERROR,Categoria.CIENCIAFICCION};
+
+
+
 
     public CatalogoView(PeliculaService peliculaService, AlquilerService alquilerService, UserService userService, SecurityService securityService) {
         super();
@@ -70,7 +78,10 @@ public class CatalogoView extends VerticalLayout {
         Header header = new Header(securityService, userService);
         setSizeFull();
         getElement().getStyle().set("padding", "0px");
-        add(header, title, createGrid());
+        add(header, title);
+        for (int i = 0;i< categorias.length;i++){
+            createGrid(categorias[i]);
+        }
     }
 
     private VerticalLayout fichaPelicula(Pelicula pelicula) {
@@ -89,6 +100,7 @@ public class CatalogoView extends VerticalLayout {
         fichaPeliculaLink = new RouterLink("Ficha de la pelicula", FichaPeliculaView.class, pelicula.getTitulo());
         fichaPeliculaLink.addClassName("ver-ficha");
         VerticalLayout layout = new VerticalLayout();
+        layout.getElement().getStyle().set("width","32.5%");
         try {
             Image portada = component.cargarPortada(pelicula);
             portada.addClassName("portada");
@@ -99,7 +111,7 @@ public class CatalogoView extends VerticalLayout {
         layout.add(component.peliculaBox("Titulo", pelicula.getTitulo()));
         layout.add(component.peliculaBox("Valoracion:", component.getStars(pelicula.getValoracion().toString())));
         Div fichaContainer = new Div();
-        fichaContainer.addClassName("campos-pelicula");
+        fichaContainer.addClassName("ficha-pelicula");
         fichaContainer.add(fichaPeliculaLink);
         layout.add(fichaContainer);
 
@@ -139,15 +151,25 @@ public class CatalogoView extends VerticalLayout {
         return layout;
     }
 
-    private HorizontalLayout createGrid() {
-        HorizontalLayout container = new HorizontalLayout();
-        for (Pelicula pelicula : listaPeliculas) {
-            container.add(fichaPelicula(pelicula));
+    private void createGrid(Categoria categoria) {
+        containerTitleCategory = new HorizontalLayout();
+        containerTitleCategory.addClassName("container-title");
+        H3 titleCategory = new H3(categoria.toString());
+        containerTitleCategory.add(titleCategory);
+        if(categoria.toString().equalsIgnoreCase("CIENCIAFICCION"))titleCategory.setText("CIENCIA FICCION");
+        titleCategory.addClassName("categoria-title");
+        List<Pelicula> peliculas = listaPeliculas.stream().filter(pelicula -> pelicula.getCategoria().toString().equalsIgnoreCase(categoria.toString())).toList();
+        if (!peliculas.isEmpty()){
+            container = new HorizontalLayout();
+            container.addClassName("grid-container");
+            container.setSizeFull();
+            for (Pelicula pelicula:peliculas) {
+                container.add(fichaPelicula(pelicula));
+            }
+            add(containerTitleCategory,container);
         }
-        container.addClassName("grid-container");
-        container.setSizeFull();
-        return container;
     }
+
 
 
 }
