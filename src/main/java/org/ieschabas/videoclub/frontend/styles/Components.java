@@ -70,7 +70,7 @@ public class Components {
 
     public Div peliculaBox(String titulo, String valor) {
         Div div = new Div();
-        div.addClassName("campos-pelicula");
+        div.addClassName("ficha-pelicula");
         Span labelTitle = new Span(titulo);
         labelTitle.addClassName("label-title");
         Span title = new Span(valor);
