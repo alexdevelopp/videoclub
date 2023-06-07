@@ -42,8 +42,8 @@ public class Header extends HorizontalLayout {
             logoContainer.addClassName("container-logo");
             Button login = new Button();
             login.addClassName("button");
-            login.setIcon(VaadinIcon.USER.create());
-            Label nameUser = new Label(usuario.getNombre());
+            login.setIcon(VaadinIcon.SIGN_OUT.create());
+            Label nameUser = new Label(usuario.getNombre() + " " + usuario.getApellidos());
             nameUser.addClassName("label-user");
             logoContainer.add(login, nameUser);
 
