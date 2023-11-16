@@ -1,0 +1,14 @@
+2023-06-03 13:29:42.665 [http-nio-8080-exec-2] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 13:29:42.790 [http-nio-8080-exec-2] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 13:29:50.523 [http-nio-8080-exec-6] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 13:29:50.584 [http-nio-8080-exec-6] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 13:30:00.979 [http-nio-8080-exec-1] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 13:30:01.043 [http-nio-8080-exec-1] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:21:43.380 [http-nio-8080-exec-2] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:21:43.502 [http-nio-8080-exec-2] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:22:17.877 [http-nio-8080-exec-10] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:22:17.940 [http-nio-8080-exec-10] ERROR UserService:29 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.save(Object)" because "this.userRepository" is null
+2023-06-03 14:27:27.366 [http-nio-8080-exec-7] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:27:27.432 [http-nio-8080-exec-7] ERROR UserService:29 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.save(Object)" because "this.userRepository" is null
+2023-06-03 14:28:23.611 [http-nio-8080-exec-5] ERROR UserService:72 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.findByEmail(String)" because "this.userRepository" is null
+2023-06-03 14:28:23.677 [http-nio-8080-exec-5] ERROR UserService:29 - Cannot invoke "org.ieschabas.videoclub.backend.repositories.UserRepository.save(Object)" because "this.userRepository" is null
